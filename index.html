@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Emoji Grid Encoder</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: #f9f9f9;
+        color: #333;
+      }
+      .container {
+        max-width: 600px;
+        margin: 30px auto;
+        background: white;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        border-radius: 8px;
+        overflow: hidden;
+      }
+      .tabs {
+        display: flex;
+        cursor: pointer;
+        background-color: #007bff;
+        color: white;
+      }
+      .tabs div {
+        flex: 1;
+        padding: 10px;
+        text-align: center;
+        transition: background 0.3s;
+      }
+      .tabs div:hover,
+      .tabs .active {
+        background-color: #0056b3;
+      }
+      .tab-content {
+        padding: 20px;
+        display: none;
+      }
+      .tab-content.active {
+        display: block;
+      }
+      input,
+      button {
+        width: 100%;
+        padding: 10px;
+        margin: 10px 0;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        font-size: 16px;
+      }
+      button {
+        background-color: #007bff;
+        color: white;
+        cursor: pointer;
+      }
+      button:hover {
+        background-color: #0056b3;
+      }
+      p {
+        margin: 5px 0;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="tabs">
+        <div id="tab-1" class="active">Location to Emoji</div>
+        <div id="tab-2">Emoji to Location</div>
+      </div>
+      <div id="content-1" class="tab-content active">
+        <h3>Location to Emoji</h3>
+        <input id="location-input" type="text" placeholder="Enter a location" />
+        <button id="find-button">Find Emoji</button>
+        <div id="result"></div>
+      </div>
+      <div id="content-2" class="tab-content">
+        <h3>Emoji to Location</h3>
+        <input id="emoji-input" type="text" placeholder="Enter emoji code" />
+        <button id="reverse-button">Decode Emoji</button>
+        <div id="reverse-result"></div>
+      </div>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>
